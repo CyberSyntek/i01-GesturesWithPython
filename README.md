@@ -79,6 +79,98 @@ This can make life easier for you if you don't remember all rest positions.
 
 
 
+APPLYING SPEED LIMITS
+= 
+When changing the speeds of you servos, you are actually setting speed limits to further reduce the speed of a servo.
+The speed limit settings range between ( 0 - 200 + None )
+
+- 0 - Slowest (likely not moving at this speed)
+- 200 - Fastest "while still limited"
+- None - Removes all speed limits = FULL SPEED (MAX)
+
+
+.setSpeed()
+= 
+Using the .setSpeed() command line, we will be adding the desired speed limit we want set for the servo within the "( )".
+
+INSERT PIC 
+
+.setMaxSpeed()
+= 
+Alternatively you can also use .setMaxSpeed() to accomplish the same speed limit removal as .setSpeed(None) , Either way will work fine.
+
+INSERT PIC
+
+SPEED LIMIT POSITIONING IN YOUR CODE
+= 
+The desired speed limit for a servo must be set prior to moving the servo for the limits to apply. / .setSpeed() line will be written above the .moveTo() line.
+
+INSERT PIC
+
+THE IMPORTANCE OF SLEEP
+= 
+sleep() will be essential for you to get used to using as it plays such a big role in creating gestures, amongst other things.
+
+The sleep() command line is what you will add to your code to break servo movements apart and let python know that it can wait a certain amount of time and then move onto the next movement line.
+
+You will add the desired time length within the "( )" to add a pause before python moves to the next lines. You can use either milliseconds or seconds in the "( )" to create a pause/break.
+
+INSERT PIC / (10s / 1s / 0.5s etc)
+
+The following examples will hopefully show you why sleep() is so important.
+
+INSERT PIC: Example 1
+
+
+
+You will NEED to add sleep() to your code to let it know there is a break between movements of the same servo! You will see in the following example why !!!!!
+
+INSERT PIC: Example 2: BAD EXAMPLE (What not to do)
+
+This will try and move the i01_head_rothead to the 130 and 90 position AT THE SAME TIME! Without adding a sleep() between the lines, python won't know it is meant as two seperate movements. *edit* 
+
+Moving multiple servos to various positions
+=
+As mentioned earleir, you can move as many different servos as wanting at the same time. Now we will move 2 servos together, sleep, and move them both again, sleep and move again.
+
+INSERT PIC:
+
+
+Applying various speed limit settings to multiple servos for multiple movements.
+= 
+
+In this example, you can see how to apply speed limits + move multiple servos > sleep > remove limits + move the same servos again.
+
+INSERT PIC:
+
+Not enough sleep!
+= 
+
+The servo will not have enough time to reach the 180 position before it begins to move again to the 0 position.
+
+INSERT PIC:
+
+The sleep timer is much too short in this example. You need to give the servo a reasonable enough time to reach its position before sending it to the next position.
+
+Tips for a good sleep!
+= 
+
+It will take some practice getting used to how long sleep timers will need for each servo to be able to reach from position to position.
+- Experiment with different timers for different ranges!
+- I suggest starting with slightly longer sleep times, run the code, reduce/adjust as needed, repeat until you are happy with it.
+
+=======================================================
+
+SERVO GROUPS EXPLAINED
+= 
+
+Looking at the example, we will see four numbers within the ( ). The order in which they appear is important!
+
+INSERT PIC: 01.moveArm("left",10,20,30,40)
+
+
+
+
 
 
 
