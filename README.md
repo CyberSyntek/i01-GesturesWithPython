@@ -24,7 +24,7 @@ In the image below, you can see that I have my "i01_torso_midStom" servo limited
 ![002limits1](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/f23ce389-6268-4ff4-ae24-aa372cc0561c)
 
 
-When moving the slider to the 0 position, it is moving the servo to my defined Min: 60 position. despite still using a 0-180 range slider.
+When moving the slider to the 0 position, it is moving the servo to my defined Min: 60 position despite still using a 0-180 range slider.
 ![MidStomSlider1](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/c5ee905f-87d2-474e-bb82-f95e19446e57)
 
 - Think of 0° as max rotation in one direction (according to your Min/Max limits)
