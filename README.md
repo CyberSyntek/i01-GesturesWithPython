@@ -18,7 +18,7 @@ This is a tutorial of how-to control your InMoov service servos in MyRobotLab(MR
 
 MOVING INDIVIDUAL SERVOS
 = 
-Movement ranges between ( 0° < 90 > 180° ). This will apply to servo's with limited Min/Max settings and keep within your set limits. 
+Movement ranges between ( 0° < 90 > 180° ). This will apply to servos with limited Min/Max settings as well and keep within your set limits. 
 
 In the image below, you can see that I have my "i01_torso_midStom" servo limited to Min:60 / Max: 120.
 ![002limits1](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/f23ce389-6268-4ff4-ae24-aa372cc0561c)
