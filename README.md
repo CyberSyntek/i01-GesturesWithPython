@@ -1,16 +1,32 @@
 i01 InMoov Servo Control and Gestures in Python.
 =
-This is a tutorial of how-to control your InMoov service servos in MyRobotLab(MRL) using python and creating gestures.
+Welcome to the how-to control your InMoov servo services in MyRobotLab(MRL) using python and creating gestures tutorial.
 
-*This is not actually the beginning of this tutorial* Still need to write this part out.
+This tutorial assumes that you have already have a basic understanding of using MRL and the InMoov services (i01).  
+- Know how to launch servo services from the InMoov (i01) UI, calibrate and move your servos with the sliders in the servo services.
 
+INMOOV SERVO SERVICES
+= 
+As you open up the default InMoov Servo services, you will see them displayed on the left side panel. 
+- They are displayed with a Servo Icon, followed by the service names for each part.
+
+![ServoServices0](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/8efaaadc-8526-4296-a853-af70d069bc26)
+
+The names of these servo services is what will be especially important as we move onto python. 
+
+
+
+INTRO TO PYTHON
+=
+You can access python from the tab on the left side. It will be in your service listing by default. 
 ![i01main1](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/cb65f2df-41f2-4ede-9c3f-9c487263f5ea)
 
-
-
+Since we will be experimenting and you may have other tabs open which launch with your i01 services, click "New" and enter a name. 
+- "Test" for example.
 
 ![PythonNewFile1](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/6b2e63fe-8790-4ee3-a0ba-3b0c987bfece)
 
+Now you should have a new tab open for whatever you named the file. "Test".
 
 ![001-PythonTab1](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/e5ff36b9-5454-43ea-af59-c05b9519ac00)
 
@@ -18,7 +34,75 @@ This is a tutorial of how-to control your InMoov service servos in MyRobotLab(MR
 
 
 
-MOVING INDIVIDUAL SERVOS
+
+"#" In python
+= 
+If you are completely new to python, it is a good idea to remember the # symbol. 
+
+![Hashtag](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/c03c05d0-f4a8-45d8-903e-59449f2ad4d2)
+
+Using the hashtag symbol, we can let python know it should ignore any lines beginning with "#" and the text will turn green.
+- This is useful for making notes for yourself or others within your code.
+- You can also use this to disable lines of code that you don't want read. Useful for temporarily disabling lines or keeping the code still written out that you may want to use at a later time.
+
+LINE SPACING IN PYTHON
+=
+Line spacing (How many blank lines between lines) will not matter in python. 
+- You can spread lines out as much as you want to make things easier to find/manage.
+
+![Linespacing](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/eca0ba88-62de-448d-9abd-2951c4e62ff5)
+
+Execute / Run a script
+=
+
+To run a script you have written out, hit the "execute button".
+![Execute1](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/243661ae-afe6-4eee-9523-c6df9cd53b36)
+
+You can run the following the example from the above image for yourself to test it. It will do NOTHING! :D
+
+#THIS IS A TEST SCRIPT WITH NO FUNCTION, EXECUTE ME!
+
+
+ADJUSTING SERVO SERVICE NAMES FOR PYTHON
+= 
+
+Python is very picky with names. It generally does not like the names of the i01 services as they contain too many dots. 
+
+![ChangeNames0](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/70bf1d0f-a946-44ac-8194-2e8cdd889e18)
+
+Make sure when using python to change the names of your servo services to use underscores " _ " instead of dots " . "
+- i01.head.neck >>> i01_head_neck
+- i01.leftArm.bicep >>> i01_leftArm_bicep
+- etc, etc. 
+
+Here is a list of all the current i01 InMoov servo services currently available at the time of writing this tutorial.
+
+![Servos1](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/9cd9e0e9-cfdb-4492-ada6-77b725090cd4)
+
+ERROR
+=
+If you forget to change the service names accordingly, you will likely see a traceback error like this.
+
+![traceback](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/213a07e9-c496-48e5-9b55-8b18c9e0479a)
+
+Alternatively, if you do see errors at any time, the error will help you identify why there is an error and which line it can be found in.
+- You will see the error listed in the bottom "console". 
+
+![Console1](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/95cfa139-faff-46da-930c-64693e4c1de6)
+
+Here is another example of an error and how to identify it within the console. 
+![TraceErrorHelp](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/930cf690-ac0f-4854-89a7-19c2f61dfebc)
+
+In this case, the traceback error told us...
+- The error occured in line 1. 
+- i01_head_neck is not defined. This is because it does NOT currently exist. I have not started the i01.head.neck servo service yet.
+
+
+
+
+
+
+SERVO MOVEMENT RECAP (Sliders VS Python)
 = 
 Movement ranges between ( 0° < 90 > 180° ). This will apply to servos with limited Min/Max settings as well and keep within your set limits. 
 
@@ -35,17 +119,8 @@ When moving the slider to the 0 position, it is moving the servo to my defined M
 - 180° as max rotation in the opposite direction. (according to your Min/Max limits)
 - 90° will be your center position. (according to your Min/Max limits)
 
-These same ranges will apply when moving your servos in python.
+These same ranges will apply when moving your servos in python as well. Your servos will act the same way as the sliders.
 
-"#" In python
-= 
-If you are completely new to python, it is a good idea to remember the # symbol. 
-
-![Hashtag](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/c03c05d0-f4a8-45d8-903e-59449f2ad4d2)
-
-Using the hashtag symbol. We can let python know it should ignore any lines beginning with "#" and the text will turn green.
-- This is useful for making notes for yourself or others within your code.
-- You can also use this to disable lines of code that you don't want read. Useful for temporarily disabling lines or keeping the code still written out that you may want to use at a later time.
 
 .moveTo()
 =
