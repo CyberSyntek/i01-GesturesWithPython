@@ -2,6 +2,8 @@ i01 InMoov Servo Control and Gestures in Python.
 =
 Welcome to the how-to control your InMoov servo services in MyRobotLab(MRL) using python and creating gestures tutorial.
 
+#INSERT IMAGE
+
 This tutorial assumes that you have already have a basic understanding of using MRL and the InMoov services (i01).  
 - Know how to launch servo services from the InMoov (i01) UI, calibrate and move your servos with the sliders in the servo services.
 
