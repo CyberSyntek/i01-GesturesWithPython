@@ -161,30 +161,59 @@ This can make life easier for you if you don't remember all rest positions.
 APPLYING SPEED LIMITS
 = 
 When changing the speeds of you servos, you are actually setting speed limits to further reduce the speed of a servo.
+
 The speed limit settings range between ( 0 - 200 + None )
 
 - 0 - Slowest (likely not moving at this speed)
 - 200 - Fastest "while still limited"
 - None - Removes all speed limits = FULL SPEED (MAX)
 
+SIDE NOTE: The speed limits only range between 0-200 with the slider. It is possible to go beyond 200 with python.
+- It is hard to tell you exactly what the max limit range will be as it will depend on your servos. 
+- If you set it too high, you may not even notice a difference between the servos max speed and the limits applied.
+- You likely won't need to go beyond 200, just it maybe possible. (You can experiment if so desiring to do so.)
+
 
 .setSpeed()
 = 
 Using the .setSpeed() command line, we will be adding the desired speed limit we want set for the servo within the "( )".
 
-INSERT PIC 
+![NeckSpeed](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/1450af15-95eb-44dc-80f4-f7c4bc67002f)
+
+As you can see, the speed limit was also changed in the i01.head.neck servo service as well. 
+
+![NeckSpeed2-1](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/b8ba74f0-3521-4e62-887d-1b4fb14d827d)
+
+Side Note: I'm not entirely sure at this time if the slider is bugged or this is intentional. 
+- The speed limit is set to 100, but the slider is still at the prior speed limit position. (semi useful for remembering prior set speed regardless) 
+- The speed limit IS being applied correctly.
+
+.setSpeed(None)
+= 
+.setSpeed(None) will remove all speed limits from the servo. 
+
+![SpeedNone](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/85ba2e06-ec17-4197-9a15-6a16ec49a807)
+
+Again if going back to the servo service, you can see that it has changed the speed limit to Max.
+
+![SpeedNone2](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/fedb3ab6-d255-445f-9b24-141c0eb37875)
+
 
 .setMaxSpeed()
 = 
-Alternatively you can also use .setMaxSpeed() to accomplish the same speed limit removal as .setSpeed(None) , Either way will work fine.
+Alternatively you can also use .setMaxSpeed() to accomplish the same speed limit removal as .setSpeed(None). 
+- Either way will work fine, they are essentially the same thing.
 
-INSERT PIC
+![SpeedMax](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/c1378723-4cc0-4b09-8ceb-4c975c7d20e6)
+
 
 SPEED LIMIT POSITIONING IN YOUR CODE
 = 
-The desired speed limit for a servo must be set prior to moving the servo for the limits to apply. / .setSpeed() line will be written above the .moveTo() line.
+The desired speed limit for a servo must be set prior to moving the servo for the limits to apply. 
+- .setSpeed() will be written above the .moveTo() command.
 
-INSERT PIC
+![LimitPositioning](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/7efe5129-b9be-4023-a2bf-32859db1357a)
+
 
 THE IMPORTANCE OF SLEEP
 = 
@@ -192,50 +221,65 @@ sleep() will be essential for you to get used to using as it plays such a big ro
 
 The sleep() command line is what you will add to your code to break servo movements apart and let python know that it can wait a certain amount of time and then move onto the next movement line.
 
-You will add the desired time length within the "( )" to add a pause before python moves to the next lines. You can use either milliseconds or seconds in the "( )" to create a pause/break.
+You will add the desired time length within the "( )" to add a pause before python moves to the next lines. 
+- You can use either milliseconds or seconds in the "( )" to create a pause/break.
 
-INSERT PIC / (10s / 1s / 0.5s etc)
+![Sleeptimers](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/3b8231f7-5456-4b7e-b04b-6a9ffede0375)
+
 
 The following examples will hopefully show you why sleep() is so important.
 
-INSERT PIC: Example 1
-
-
-
 You will NEED to add sleep() to your code to let it know there is a break between movements of the same servo! You will see in the following example why !!!!!
 
-INSERT PIC: Example 2: BAD EXAMPLE (What not to do)
+- Example 1: Move to 180 > wait 3s > move to 0 > wait 2s > return servo to center.
+- The sleep timers are what allows to servo to reach its position before moving to the next.
+ 
+![Sleepexample1](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/2507a03b-3551-4213-8e8c-ff821fa32119)
 
-This will try and move the i01_head_rothead to the 130 and 90 position AT THE SAME TIME! Without adding a sleep() between the lines, python won't know it is meant as two seperate movements. *edit* 
+
+THE BAD EXAMPLE (What NOT to do)
+=
+WARNING!!!! Do not attempt this example. 
+- In this example, the servo will attempt to reach the 180 position and the 0 position at THE SAME TIME.
+- Without adding a sleep() between the lines, python won't know that they are meant as two seperate movements.
+
+![BadExample](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/a17d40ad-88f2-4617-bfa3-30fa86bfb69c)
+
+Side Note: You likely won't break your servos if you forgot to include it.... but it is a good idea to try and avoid it.
+- Things may get funny if you forget sleep().
 
 Moving multiple servos to various positions
 =
-As mentioned earleir, you can move as many different servos as wanting at the same time. Now we will move 2 servos together, sleep, and move them both again, sleep and move again.
+As mentioned earleir, you can move as many different servos as wanting at the same time. Now we will move 5 servos together.
+- All servos to 180 > sleep for 5s > all servos to 0 > sleep for 5s > all servos to 90 > sleep for 0.1s.
 
-INSERT PIC:
+![Multiservosleep](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/3e8d807a-7550-4e64-aeb5-0aacd002cd12)
 
 
 Applying various speed limit settings to multiple servos for multiple movements.
 = 
 
-In this example, you can see how to apply speed limits + move multiple servos > sleep > remove limits + move the same servos again.
+In this example, you can see how to apply speed limits + move multiple servos > sleep > repeat to your hearts content or until you go crazy. :D
 
-INSERT PIC:
+![VariousStageChanges](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/8a2417fa-255a-46c9-9c31-de03084068fd)
 
 Not enough sleep!
 = 
+You need to give the servo a reasonable enough time to reach its position before sending it to the next position.
 
-The servo will not have enough time to reach the 180 position before it begins to move again to the 0 position.
+- In this example, the .sleep() timer is set so short, the servo cannot reach the 180 posistion before moving to the 0 position.
 
-INSERT PIC:
-
-The sleep timer is much too short in this example. You need to give the servo a reasonable enough time to reach its position before sending it to the next position.
+![NotEnoughSleep](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/bb6df91f-da56-41b3-8a05-086395ed8655)
 
 Tips for a good sleep!
 = 
 
 It will take some practice getting used to how long sleep timers will need for each servo to be able to reach from position to position.
-- Experiment with different timers for different ranges!
+
+
+
+- Experiment with different length timers. 
+- You will need a longer timer moving a servo from 0 to 180 than you would moving it from 0 to 90. 
 - I suggest starting with slightly longer sleep times, run the code, reduce/adjust as needed, repeat until you are happy with it.
 
 =======================================================
