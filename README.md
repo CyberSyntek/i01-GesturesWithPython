@@ -81,6 +81,16 @@ Here is a list of all the current i01 InMoov servo services currently available 
 
 ![Servos1](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/9cd9e0e9-cfdb-4492-ada6-77b725090cd4)
 
+CAPITALIZATION / CASE MATCHING MATTERS!
+= 
+If you using for example i01_head_neck , it CANNOT be written with a different case of letters. 
+
+![CasematchingMatters](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/1c0d2496-72e8-4c0b-9c95-d421d704ebdf)
+
+- It must be written with the same matching character case for python to know it is the same service.
+
+
+
 ERROR
 =
 If you forget to change the service names accordingly, you will likely see a traceback error like this.
@@ -98,10 +108,6 @@ Here is another example of an error and how to identify it within the console.
 In this case, the traceback error told us...
 - The error occured in line 1. 
 - i01_head_neck is not defined. This is because it does NOT currently exist. I have not started the i01.head.neck servo service yet.
-
-
-
-
 
 
 SERVO MOVEMENT RECAP (Sliders VS Python)
@@ -256,7 +262,7 @@ As mentioned earleir, you can move as many different servos as wanting at the sa
 ![Multiservosleep](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/3e8d807a-7550-4e64-aeb5-0aacd002cd12)
 
 
-Applying various speed limit settings to multiple servos for multiple movements.
+Applying various limits to multiple servos movement stages.
 = 
 
 In this example, you can see how to apply speed limits + move multiple servos > sleep > repeat to your hearts content or until you go crazy. :D
@@ -276,28 +282,81 @@ Tips for a good sleep!
 
 It will take some practice getting used to how long sleep timers will need for each servo to be able to reach from position to position.
 
-
+![NotEnoughSleep2](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/89cfbd62-ac0c-4023-b8e9-38e5789dd2b3)
 
 - Experiment with different length timers. 
 - You will need a longer timer moving a servo from 0 to 180 than you would moving it from 0 to 90. 
 - I suggest starting with slightly longer sleep times, run the code, reduce/adjust as needed, repeat until you are happy with it.
 
+AUTO DISABLE TIMERS
+= 
+You will need to make sure your servos auto disable timers are long enough that the servo is able to reach its longest destination range. 
+- 0-180 for example. If you servo can reach from 0 - 180 within 5 seconds for example you know it is safe.
+- You can continue to reduce and repeat until you have found an ideal auto disable timer. 
+- This can be a bit tricky once you apply different speed limits, so you will need to experiment.
+
+![AutoDisableTimer](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/504ffb01-b31d-4c8c-9871-8c9a430eae28)
+
+WARNING! - ADVANCED GESTURE AUTO DISABLE COMMANDS
+= 
+USE WITH CAUTION!!!!
+
+![ServosAtRisk](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/1435675f-b96c-468e-bf9a-d00b4c320126)
+
+You really should not use these until you are very compfortable playing around with your servos. 
+- Auto disable timers are important as they help prevent your servos from burning out. 
+
+With the following example, we can disable the autoDisable timer within python and also re-enable it.
+
+![DangerZone](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/28efe23e-507c-4055-afc3-e65662df6e07)
+
+USE CASE: 
+- Can be useful for when we need a servo to maintain power for longer than normal to hold a position.
+  - Omoplate is an example of a servo that requires power to be held up. Once autodisable kicks in, it can come crashing down.
+ 
+- Can use useful for when using slower speed limits to avoid autoDisable timer kicking in before destination reached. 
+
+I strongly suggest you don't use this until you have played with ALOT of gesture creation and start getting more and more fancy with them. 
+- .setAutoDisable(False) #Disable autoDisable.
+- .setAutoDisable(True) #Enable autoDisable.
+
+And that is all I am going to cover for individual line servo commands! HOWEVER, there are more options available still! .... but I'm hungry and need lunch. :D
+
+=======================================================
+
+SERVO GROUPS! 
+=
+
+*beep boop* Updates in progress!
 =======================================================
 
 SERVO GROUPS EXPLAINED
 = 
 
-Looking at the example, we will see four numbers within the ( ). The order in which they appear is important!
-
-INSERT PIC: 01.moveArm("left",10,20,30,40)
-
-
-
-
-
-
-
+*beep boop* Updates in progress!
 
 =======================================================
 
+DEFINING YOUR GESTURES (FORMAT AND SAVING)
+=
+
 *beep boop* Updates in progress!
+
+=======================================================
+
+IMPORTING YOUR GESTURES
+=
+
+*beep boop* Updates in progress!
+
+=======================================================
+
+MAYBE ASSIGNING VOICE COMMANDS TO YOUR GESTURES?
+= 
+
+*beep boop* Updates in progress!
+
+=======================================================
+
+NO IDEA, MAYBE MORE... o/ 
+
