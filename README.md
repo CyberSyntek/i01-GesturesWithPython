@@ -43,6 +43,11 @@ If you are completely new to python, it is a good idea to remember the # symbol.
 
 ![Hashtag](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/c03c05d0-f4a8-45d8-903e-59449f2ad4d2)
 
+```py
+#THIS IS AN EXAMPLE OF USING THE HASHTAG "#". 
+```
+
+
 Using the hashtag symbol, we can let python know it should ignore any lines beginning with "#" and the text will turn green.
 - This is useful for making notes for yourself or others within your code.
 - You can also use this to disable lines of code that you don't want read. Useful for temporarily disabling lines or keeping the code still written out that you may want to use at a later time.
@@ -54,6 +59,15 @@ Line spacing (How many blank lines between lines) will not matter in python.
 
 ![Linespacing](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/eca0ba88-62de-448d-9abd-2951c4e62ff5)
 
+```py
+#THIS IS AN EXAMPLE OF USING LINE SPACING.
+
+
+
+#YEP! 
+```
+
+
 Execute / Run a script
 =
 
@@ -62,8 +76,9 @@ To run a script you have written out, hit the "execute button".
 
 You can run the following the example from the above image for yourself to test it. It will do NOTHING! :D
 
+```py
 #THIS IS A TEST SCRIPT WITH NO FUNCTION, EXECUTE ME!
-
+```
 
 ADJUSTING SERVO SERVICE NAMES FOR PYTHON
 = 
@@ -137,6 +152,10 @@ Using the .moveTo() command line, we will be adding the desired position we want
 
 ![003-midStom180](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/147d798e-2960-428b-8284-aabb0e732b6c)
 
+```py
+i01_torso_midStom.moveTo(180)
+```
+
 You can see here, when I click back to the i01_torso_midStom servo service, it has moved the slider to the 180 position.
 
 ![004-midStomB](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/3d74e6fd-1d27-4130-85ba-2d4c588bf03a)
@@ -147,6 +166,11 @@ You can move as many DIFFERENT servos as you want at the same time!
 
 ![MultiServo1](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/2dc2f2c3-b669-4f5d-8c47-51a9baf4404e)
 
+```py
+i01_torso_topStom.moveTo(90)
+i01_torso_midStom.moveTo(90)
+```
+
 Moving the SAME servo more than once will be continued below in "THE IMPORTANCE OF SLEEP".
 
 
@@ -154,6 +178,10 @@ Moving the SAME servo more than once will be continued below in "THE IMPORTANCE 
 =
 Using .rest() will return the servo to your defined rest position.
 ![Rest0](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/4ac194f9-026c-492a-84ff-3de7a4080993)
+
+```py
+i01_torso_midStom.rest()
+```
 
 .rest() will function the same way as if you click the Rest button in the servo service.
 ![Rest](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/9d8cc71f-9509-4473-b0d0-0c7bdd4cc915)
@@ -186,6 +214,10 @@ Using the .setSpeed() command line, we will be adding the desired speed limit we
 
 ![NeckSpeed](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/1450af15-95eb-44dc-80f4-f7c4bc67002f)
 
+```py
+i01_head_neck.setSpeed(100)
+```
+
 As you can see, the speed limit was also changed in the i01.head.neck servo service as well. 
 
 ![NeckSpeed2-1](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/b8ba74f0-3521-4e62-887d-1b4fb14d827d)
@@ -200,6 +232,10 @@ Side Note: I'm not entirely sure at this time if the slider is bugged or this is
 
 ![SpeedNone](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/85ba2e06-ec17-4197-9a15-6a16ec49a807)
 
+```py
+i01_head_neck.setSpeed(None)
+```
+
 Again if going back to the servo service, you can see that it has changed the speed limit to Max.
 
 ![SpeedNone2](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/fedb3ab6-d255-445f-9b24-141c0eb37875)
@@ -212,6 +248,9 @@ Alternatively you can also use .setMaxSpeed() to accomplish the same speed limit
 
 ![SpeedMax](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/c1378723-4cc0-4b09-8ceb-4c975c7d20e6)
 
+```py
+i01_head_neck.setMaxSpeed()
+```
 
 SPEED LIMIT POSITIONING IN YOUR CODE
 = 
@@ -219,6 +258,11 @@ The desired speed limit for a servo must be set prior to moving the servo for th
 - .setSpeed() will be written above the .moveTo() command.
 
 ![LimitPositioning](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/7efe5129-b9be-4023-a2bf-32859db1357a)
+
+```py
+i01_head_neck.setSpeed(200)
+i01_head_neck.moveTo(90)
+```
 
 
 THE IMPORTANCE OF SLEEP
@@ -232,6 +276,9 @@ You will add the desired time length within the "( )" to add a pause before pyth
 
 ![Sleeptimers](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/3b8231f7-5456-4b7e-b04b-6a9ffede0375)
 
+```py
+sleep(1)
+```
 
 The following examples will hopefully show you why sleep() is so important.
 
@@ -242,6 +289,13 @@ You will NEED to add sleep() to your code to let it know there is a break betwee
  
 ![Sleepexample1](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/2507a03b-3551-4213-8e8c-ff821fa32119)
 
+```py
+i01_head_neck.moveTo(180)
+sleep(3)
+i01_head_neck.moveTo(0)
+sleep(2)
+i01_head_neck.moveTo(90)
+```
 
 THE BAD EXAMPLE (What NOT to do)
 =
@@ -261,6 +315,28 @@ As mentioned earleir, you can move as many different servos as wanting at the sa
 
 ![Multiservosleep](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/3e8d807a-7550-4e64-aeb5-0aacd002cd12)
 
+```py
+i01_head_neck.moveTo(180)
+i01_head_rothead.moveTo(180)
+i01_head_rollneck.moveTo(180)
+i01_leftArm_bicep.moveTo(180)
+i01_rightArm_bicep.moveTo(180)
+sleep(5)
+
+i01_head_neck.moveTo(0)
+i01_head_rothead.moveTo(0)
+i01_head_rollneck.moveTo(0)
+i01_leftArm_bicep.moveTo(0)
+i01_rightArm_bicep.moveTo(0)
+sleep(5)
+
+i01_head_neck.moveTo(90)
+i01_head_rothead.moveTo(90)
+i01_head_rollneck.moveTo(90)
+i01_leftArm_bicep.moveTo(90)
+i01_rightArm_bicep.moveTo(90)
+sleep(0.1)
+```
 
 Applying various limits to multiple servos movement stages.
 = 
@@ -268,6 +344,31 @@ Applying various limits to multiple servos movement stages.
 In this example, you can see how to apply speed limits + move multiple servos > sleep > repeat to your hearts content or until you go crazy. :D
 
 ![VariousStageChanges](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/8a2417fa-255a-46c9-9c31-de03084068fd)
+
+```py
+i01_head_neck.setSpeed(150)
+i01_head_rothead.setSpeed(200)
+i01_head_rollneck.setSpeed(50)
+i01_head_neck.moveTo(180)
+i01_head_rothead.moveTo(180)
+i01_head_rollneck.moveTo(180)
+sleep(7)
+
+i01_head_neck.setSpeed(100)
+i01_head_rothead.setSpeed(None)
+i01_head_rollneck.setMaxSpeed()
+i01_head_neck.moveTo(0)
+i01_head_rothead.moveTo(0)
+i01_head_rollneck.moveTo(0)
+sleep(3)
+
+i01_head_neck.setSpeed(200)
+i01_head_rothead.setSpeed(200)
+i01_head_rollneck.setSpeed(200)
+i01_head_neck.moveTo(90)
+i01_head_rothead.moveTo(90)
+i01_head_rollneck.moveTo(90)
+```
 
 Not enough sleep!
 = 
@@ -283,6 +384,20 @@ Tips for a good sleep!
 It will take some practice getting used to how long sleep timers will need for each servo to be able to reach from position to position.
 
 ![NotEnoughSleep2](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/89cfbd62-ac0c-4023-b8e9-38e5789dd2b3)
+
+```py
+i01_torso_midStom.setSpeed(None)
+i01_torso_midStom.moveTo(0)
+sleep(10)
+
+i01_torso_midStom.moveTo(180)
+sleep(5)
+
+i01_torso_midStom.moveTo(90)
+sleep(2.5)
+
+i01_torso_midStom.moveTo(0)
+```
 
 - Experiment with different length timers. 
 - You will need a longer timer moving a servo from 0 to 180 than you would moving it from 0 to 90. 
@@ -309,6 +424,13 @@ You really should not use these until you are very compfortable playing around w
 With the following example, we can disable the autoDisable timer within python and also re-enable it.
 
 ![DangerZone](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/28efe23e-507c-4055-afc3-e65662df6e07)
+
+```py
+i01_head_neck.setAutoDisable(False)
+sleep(5)
+
+i01_head_neck.setAutoDisable(True) #REMEMBER ME!
+```
 
 USE CASE: 
 - Can be useful for when we need a servo to maintain power for longer than normal to hold a position.
