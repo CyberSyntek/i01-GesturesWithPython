@@ -446,17 +446,136 @@ I'll be updating this page over the next few days, more updates to come shortly.
 
 =======================================================
 
-SERVO GROUPS! 
-=
-
-*beep boop* Updates in progress!
-
-=======================================================
-
 SERVO GROUPS EXPLAINED
 = 
 
-*beep boop* Updates in progress!
+Servo groups are another way you can control your servos in python. 
+
+![groupequal](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/f2ed9105-c5ed-4d4b-9056-c49747b9e271)
+
+Think of Servo Groups as a condensed version of ".moveTo()" or ".setSpeed()" for multiple servos which are sorted into limb sections. 
+- head = neck, rothead, eyeX, eyeY, jaw, rollNeck
+- Arm =  bicep, rotate, shoulder, omoplate
+- Hand = thumb, index, majeure, ringFinger, pinky, wrist
+- torso = topStom, midStom & lowStom.
+
+Benefits of groups: 
+- Hugely decrease the amount of lines in your code.
+
+Negatives of groups: 
+- You MUST remember which value represents which servo or you might move the wrong servo unexpectedly.
+  - Accidents can happen when moving the wrong servos depending on the various servo positions.
+
+Looking at the example, we will see four numbers within the ( ). The order in which they appear is important! 
+
+- Each of these numbers represent a specific servo and the position we want to move it to.
+- In this case, the first value "10" represents i01.leftArm.bicep and that we want to move it to the 10 position.
+- For ARMS and HANDS you will see either "left" or "right" initially within the ( ) which determines which side Arm or Hand you are moving.
+
+
+```py
+#Example: Moving all 4 "left" Arm servos (bicep / rotate / shoulder / omoplate) 
+i01.moveArm("left",10,80,40,20)
+
+#PLEASE USE EXAMPLE BELOW INSTEAD OF TESTING THIS EXAMPLE!
+```
+
+I suggest testing each servo group with only moving one servo at a time while you get used to using groups to avoid accidents. 
+
+```py
+#Example: Moving only the left bicep servo. (bicep / rotate / shoulder / omoplate) 
+i01.moveArm("left",10,None,None,None)
+```
+
+More safe to try examples below!
+
+SERVO GROUPS AND EXAMPLES
+=
+
+![Groups](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/0d79b58f-8574-407e-b8ae-cb0fcc5c15e4)
+
+HEAD EXAMPLES:
+```py
+#Setting the whole group speed limit to 200.
+i01.setHeadSpeed(200,200,200,200,200,200) #(neck,rothead,eyeX,eyeY,jaw,rollNeck)
+
+#Moving only the neck within the group.
+i01.moveHead(100,None,None,None,None,None) #(neck,rothead,eyeX,eyeY,jaw,rollNeck)
+```
+
+LEFT ARM EXAMPLES:
+```py
+#Setting the whole group speed limit to 200.
+i01.setArmSpeed("left",200,200,200,200) #("left",bicep,rotate,shoulder,omoplate)
+
+#Moving only "left" bicep within the group.
+i01.moveArm("left",10,None,None,None) #("left",bicep,rotate,shoulder,omoplate)
+```
+
+RIGHT ARM EXAMPLES:
+```py
+#Setting the whole group speed limit to 200.
+i01.setArmSpeed("right",200,200,200,200) #("right",bicep,rotate,shoulder,omoplate)
+
+#Moving only "right" bicep within the group.
+i01.moveArm("right",10,None,None,None) #("right",bicep,rotate,shoulder,omoplate)
+```
+
+LEFT HAND EXAMPLES:
+```py
+#Setting the whole group speed limit to 200.
+i01.setHandSpeed("left",200,200,200,200,200,200) #("left",thumb,index,majeure,ringFinger,wrist)
+
+#Moving only "left" wrist within the group.
+i01.moveHand("left",None,None,None,None,None,180) #("left",thumb,index,majeure,ringFinger,wrist)
+```
+
+RIGHT HAND EXAMPLES:
+```py
+#Setting the whole group speed limit to 200.
+i01.setHandSpeed("right",200,200,200,200,200,200) #("right",thumb,index,majeure,ringFinger,wrist)
+
+#Moving only "right" wrist within the group.
+i01.moveHand("right",0,None,None,None,None,None) #("right",thumb,index,majeure,ringFinger,wrist)
+```
+
+TORSO EXAMPLES:
+```py
+#Setting the whole group speed limit to 200.
+i01.setTorsoSpeed(200,200,200) #(topStom,midStom,lowStom)
+
+#Moving only "midStom" within the group.
+i01.moveTorso(None,90,None) #(topStom,midStom,lowStom)
+```
+
+
+None (movement) VS None (speed) - ... Update!
+
+Remember not to confuse "None".
+
+- MOVEMENT: Ignore Servo
+- SPEED: Remove limits
+
+
+MISSING GROUPS
+= 
+
+- As of when I am writing this, there are currently no group setting for the V2 head.
+  - The V2 head is still very new and I believe code side things are still being planned out.
+
+- While there is a service for i01.head.eyelidLeft & i01.head.eyelidRight, they were new part of the official build.
+  - They were added to allow people to explore with mods and are NOT part of any groups.  
+
+
+SUB SERVO GROUPS
+= 
+
+... update!
+
+
+
+
+
 
 =======================================================
 
