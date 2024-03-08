@@ -425,13 +425,6 @@ With the following example, we can disable the autoDisable timer within python a
 
 ![DangerZone](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/28efe23e-507c-4055-afc3-e65662df6e07)
 
-```py
-i01_head_neck.setAutoDisable(False)
-sleep(5)
-
-i01_head_neck.setAutoDisable(True) #REMEMBER ME!
-```
-
 USE CASE: 
 - Can be useful for when we need a servo to maintain power for longer than normal to hold a position.
   - Omoplate is an example of a servo that requires power to be held up. Once autodisable kicks in, it can come crashing down.
@@ -439,10 +432,17 @@ USE CASE:
 - Can use useful for when using slower speed limits to avoid autoDisable timer kicking in before destination reached. 
 
 I strongly suggest you don't use this until you have played with ALOT of gesture creation and start getting more and more fancy with them. 
-- .setAutoDisable(False) #Disable autoDisable.
-- .setAutoDisable(True) #Enable autoDisable.
 
-And that is all I am going to cover for individual line servo commands! HOWEVER, there are more options available still! .... but I'm hungry and need lunch. :D
+```py
+i01_head_neck.setAutoDisable(False)
+sleep(5)
+
+i01_head_neck.setAutoDisable(True) #REMEMBER ME!
+```
+
+And that is all I am going to cover for individual line servo commands! HOWEVER, there are more options available still! 
+
+I'll be updating this page over the next few days, more updates to come shortly. o/
 
 =======================================================
 
@@ -455,6 +455,17 @@ SERVO GROUPS!
 
 SERVO GROUPS EXPLAINED
 = 
+
+*beep boop* Updates in progress!
+
+=======================================================
+
+ADDITIONAL FUNCTIONS WITHIN GESTURES
+= 
+
+- speech?
+- IMG?
+- etc?
 
 *beep boop* Updates in progress!
 
