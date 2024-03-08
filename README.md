@@ -465,6 +465,7 @@ Benefits of groups:
 Negatives of groups: 
 - You MUST remember which value represents which servo or you might move the wrong servo unexpectedly.
   - Accidents can happen when moving the wrong servos depending on the various servo positions.
+- Not all servos have groups! See below in "MISSING GROUPS".
 
 Looking at the example, we will see four numbers within the ( ). The order in which they appear is important! 
 
