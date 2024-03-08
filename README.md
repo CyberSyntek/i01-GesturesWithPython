@@ -548,31 +548,37 @@ i01.setTorsoSpeed(200,200,200) #(topStom,midStom,lowStom)
 i01.moveTorso(None,90,None) #(topStom,midStom,lowStom)
 ```
 
+None VS None
+=
+![noneVSnone](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/d558a4fe-cfe7-444e-94f5-6e403ef5de3f)
 
-None (movement) VS None (speed) - ... Update!
 
-Remember not to confuse "None".
-
+Remember not to confuse "None" between movement and speed settings in groups. They have different functions.
 - MOVEMENT: Ignore Servo
-- SPEED: Remove limits
 
+- SPEED: Remove limits
 
 MISSING GROUPS
 = 
 
+V2 Head Servos
 - As of when I am writing this, there are currently no group setting for the V2 head.
   - The V2 head is still very new and I believe code side things are still being planned out.
 
-- While there is a service for i01.head.eyelidLeft & i01.head.eyelidRight, they were new part of the official build.
+i01.head.eyelidLeft & i01.head.eyelidRight
+- While there is a service for i01.head.eyelidLeft & i01.head.eyelidRight, they were not part of the official build.
   - They were added to allow people to explore with mods and are NOT part of any groups.  
 
 
 SUB SERVO GROUPS
 = 
 
-... update!
+If you have ever explored the built-in gestures folder, you may come across some examples of group lines looking like the following example.
+- There is more info relating to built-in gestures at the bottom of this page.
 
+Gael has created a few "sub" groups over the years.....which.... you will learn about when I update this. :D
 
+*beep boop* Updates in progress! 
 
 
 
@@ -582,11 +588,7 @@ SUB SERVO GROUPS
 ADDITIONAL FUNCTIONS WITHIN GESTURES
 = 
 
-- speech?
-- IMG?
-- etc?
-
-*beep boop* Updates in progress!
+*beep boop* Updates in progress! 
 
 =======================================================
 
@@ -604,12 +606,29 @@ IMPORTING YOUR GESTURES
 
 =======================================================
 
-MAYBE ASSIGNING VOICE COMMANDS TO YOUR GESTURES?
+ASSIGNING VOICE COMMANDS TO YOUR GESTURES?
 = 
 
 *beep boop* Updates in progress!
 
 =======================================================
 
-NO IDEA, MAYBE MORE... o/ 
+EXPLORING BUILT IN GESTURES
+=
+![DefaultGestures](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/b3043a25-b057-473f-824c-b62567261de6)
 
+InMoov built in gestures folder location.
+- "myrobotlab-1.1.1402\resource\InMoov2\gestures"
+
+You may want to explore this a bit and examine the various gesture examples you have available to you already. 
+
+Keep in mind when I say explore, I mean examine the code rather then run them. 
+
+- Some of the premade gestures are only partial gestures. They are not all made to run on their own. 
+   - What this means is, one gesture might end in a position in which it was made to flow into another gesture. 
+   - If you are running just the partial gesture, it may not end in a safe place if it can't flow to the next. 
+   - Once autoDisable kills the power to certain servos, gravity may force them to come down on their own. (Risk of breaking something).
+
+I'm planning on breaking that down a bit sometime near future and making a list to highlight the safe to run examples. 
+- Some of them are safe as is, but I suggest you get used to reading the code before you run them so you can tell for yourself. 
+- OR... wait for my list. :)
