@@ -23,7 +23,7 @@ INTRO TO PYTHON
 You can access python from the tab on the left side. It will be in your service listing by default. 
 ![i01main1](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/cb65f2df-41f2-4ede-9c3f-9c487263f5ea)
 
-Since we will be experimenting and you may have other tabs open which launch with your i01 services, click "New" and enter a name. 
+Since we will be experimenting and you may have other tabs open which launch with your i01 services by default, click "New" and enter a name. 
 - "Test" for example.
 
 ![PythonNewFile1](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/6b2e63fe-8790-4ee3-a0ba-3b0c987bfece)
@@ -46,11 +46,11 @@ If you are completely new to python, it is a good idea to remember the # symbol.
 ```py
 #THIS IS AN EXAMPLE OF USING THE HASHTAG "#". 
 ```
-
-
-Using the hashtag symbol, we can let python know it should ignore any lines beginning with "#" and the text will turn green.
-- This is useful for making notes for yourself or others within your code.
-- You can also use this to disable lines of code that you don't want read. Useful for temporarily disabling lines or keeping the code still written out that you may want to use at a later time.
+Using the hashtag symbol, we can let python know it should ignore anything following a "#" symbol. Any text following # will be displayed in green.
+- Python will ignore all green text.
+- This is useful for making notes for yourself or for others within your code.
+- You can also use this to disable lines of code that you don't want read. 
+- Useful for temporarily disabling lines OR maintaining code you don't want read for potentially using again in the future. (Not so temporarily).
 
 LINE SPACING IN PYTHON
 =
@@ -74,7 +74,7 @@ Execute / Run a script
 To run a script you have written out, hit the "execute button".
 ![Execute1](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/243661ae-afe6-4eee-9523-c6df9cd53b36)
 
-You can run the following the example from the above image for yourself to test it. It will do NOTHING! :D
+You can run the following example from the above image for yourself to test it. It will do NOTHING! :D
 
 ```py
 #THIS IS A TEST SCRIPT WITH NO FUNCTION, EXECUTE ME!
@@ -98,7 +98,7 @@ Here is a list of all the current i01 InMoov servo services currently available 
 
 CAPITALIZATION / CASE MATCHING MATTERS!
 = 
-If you using for example i01_head_neck , it CANNOT be written with a different case of letters. 
+If you're using for example i01_head_neck , it CANNOT be written with a different case of letters. 
 
 ![CasematchingMatters](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/1c0d2496-72e8-4c0b-9c95-d421d704ebdf)
 
@@ -129,7 +129,7 @@ SERVO MOVEMENT RECAP (Sliders VS Python)
 = 
 Movement ranges between ( 0° < 90 > 180° ). This will apply to servos with limited Min/Max settings as well and keep within your set limits. 
 
-In the image below, you can see that I have my "i01_torso_midStom" servo limited to Min:60 / Max: 120.
+In the image below, you can see that I have my "i01.torso.midStom" servo limited to Min:60 / Max: 120.
 
 ![002limits1](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/f23ce389-6268-4ff4-ae24-aa372cc0561c)
 
@@ -156,7 +156,7 @@ Using the .moveTo() command line, we will be adding the desired position we want
 i01_torso_midStom.moveTo(180)
 ```
 
-You can see here, when I click back to the i01_torso_midStom servo service, it has moved the slider to the 180 position.
+You can see here, when I click back to the i01.torso.midStom servo service, it has moved the slider to the 180 position.
 
 ![004-midStomB](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/3d74e6fd-1d27-4130-85ba-2d4c588bf03a)
 
@@ -236,7 +236,7 @@ Side Note: I'm not entirely sure at this time if the slider is bugged or this is
 i01_head_neck.setSpeed(None)
 ```
 
-Again if going back to the servo service, you can see that it has changed the speed limit to Max.
+Again if going back to the servo service, you can see that it has changed the speed limit to Max / removed limits.
 
 ![SpeedNone2](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/fedb3ab6-d255-445f-9b24-141c0eb37875)
 
@@ -310,7 +310,7 @@ Side Note: You likely won't break your servos if you forgot to include it.... bu
 
 Moving multiple servos to various positions
 =
-As mentioned earleir, you can move as many different servos as wanting at the same time. Now we will move 5 servos together.
+As mentioned earlier, you can move as many different servos as wanting at the same time. Now we will move 5 servos together.
 - All servos to 180 > sleep for 5s > all servos to 0 > sleep for 5s > all servos to 90 > sleep for 0.1s.
 
 ![Multiservosleep](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/3e8d807a-7550-4e64-aeb5-0aacd002cd12)
@@ -338,7 +338,7 @@ i01_rightArm_bicep.moveTo(90)
 sleep(0.1)
 ```
 
-Applying various limits to multiple servos movement stages.
+Applying various limits and positions to multiple servos in different stages.
 = 
 
 In this example, you can see how to apply speed limits + move multiple servos > sleep > repeat to your hearts content or until you go crazy. :D
@@ -372,11 +372,13 @@ i01_head_rollneck.moveTo(90)
 
 Not enough sleep!
 = 
-You need to give the servo a reasonable enough time to reach its position before sending it to the next position.
+You need to give a servo a reasonable enough time length to reach its position before sending it to the next position.
 
 - In this example, the .sleep() timer is set so short, the servo cannot reach the 180 posistion before moving to the 0 position.
 
 ![NotEnoughSleep](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/bb6df91f-da56-41b3-8a05-086395ed8655)
+
+- It will still ATTEMPT to reach 180, but it's movement will get cut off and proceed to the 0 position. 
 
 Tips for a good sleep!
 = 
@@ -418,7 +420,7 @@ USE WITH CAUTION!!!!
 
 ![ServosAtRisk](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/1435675f-b96c-468e-bf9a-d00b4c320126)
 
-You really should not use these until you are very compfortable playing around with your servos. 
+You really should not use these until you are very comfortable playing around with your servos. 
 - Auto disable timers are important as they help prevent your servos from burning out. 
 
 With the following example, we can disable the autoDisable timer within python and also re-enable it.
@@ -581,6 +583,75 @@ Gael has created a few "sub" groups over the years.....which.... you will learn 
 
 *beep boop* Updates in progress! 
 
+
+SPEECH WITHIN GESTURES
+= 
+
+A bit more information about the following two commands will be written here in the future. 
+
+- At the bottom of "i01_mouth.speakBlocking()" you will see the note on why that is. :)
+
+i01.speak()
+=
+
+When using i01.speak() , you will place the text you want spoken between quotes within the ( ). 
+- Example:  "I am speaking"   >>>   i01.speak("I am speaking")
+
+This is the simplest way to achieve speech.
+```py
+i01.speak("I am speaking now. Test test Test!")
+```
+
+Here is another example of using the same example above while the head is in motion.
+```py
+#You will see the head continue to move back and forth as speech is happening.
+
+i01_head_rothead.setSpeed(50)
+i01_head_rothead.moveTo(50)
+sleep(1.5)
+
+i01.speak("I am speaking now. Test test Test!")
+i01_head_rothead.moveTo(130)
+sleep(1.5)
+
+i01_head_rothead.moveTo(50)
+sleep(1.5)
+
+i01_head_rothead.moveTo(130)
+sleep(1.5)
+
+i01_head_rothead.moveTo(90)
+```
+
+i01_mouth.speakBlocking()
+=
+Another way to achieve speaking is with i01_mouth.speakBlocking(). 
+
+The same rule applies when using i01_mouth.speakBlocking(). Place spoken text between quotes within between the ( ). 
+```py 
+i01_mouth.speakBlocking("Now I am speak Blocking! Haha")
+```
+
+The major difference with i01_mouth.speakBlocking() is that it will "Block" all of the following lines in your script until it is done saying whatever is within the (). 
+- This means if you have a .moveTo() command following i01_mouth.speakBlocking(), it will not move until the speech is complete.
+```py 
+#In this example you can see rothead will only move to the 130 position AFTER i01_mouth.speakBlocking() is complete.
+i01_mouth.speakBlocking("Now I am speak Blocking! Haha")
+i01_head_rothead.moveTo(130)
+```
+
+You will notice in the above example that there is no sleep() timer before the .moveTo(). i01_mouth.speakBlocking() is acting like a sleep timer in this situation. 
+- It is "blocking" all lines following until speech is complete before moving on.
+- Because of this, sleep() is not needed. Adding a sleep() would further extend the time before moveTo() begins.
+
+NOTE: Currently bugged
+-i01.speakBlocking()  - Not blocking correctly. (Although... this maybe fixed later today for all I know.) 
+-i01_mouth.speakBlocking() - Is currently blocking correctly. 
+
+NOTE: Future changes.
+- i01.speakBlocking() - is what we will be using in the future.
+- i01_mouth.speakBlocking() - may stop working eventually. 
+- i01_mouth.speak() - This was not listed above, but also works for now and may not in the future. I don't believe you will need it as "i01.speak()" already seems to be working fine.
 
 
 
