@@ -586,10 +586,24 @@ Gael has created a few "sub" groups over the years.....which.... you will learn 
 
 SPEECH WITHIN GESTURES
 = 
+In order to use speech in python, you will need a mouth.
 
-A bit more information about the following two commands will be written here in the future. 
+![NeedMouth1](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/84952259-3ea3-4b56-a92c-356ec4249f0f)
 
-- At the bottom of "i01_mouth.speakBlocking()" you will see the note on why that is. :)
+ ......"01.mouth" service that is. :)
+
+![SpeakvsSpeakBlocking](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/388bcb8a-46da-4973-a95b-6b0aacc1093d)
+
+There are two different ways to achieve speech. 
+- i01.speak()
+- i01.speakBlocking()
+
+```py
+#i01.speak() vs i01.speakBlocking()
+i01.speak("I am speaking RIGHT NOW!")
+sleep(4)
+i01.speakBlocking("Now I am speak Blocking! Haha")
+```
 
 i01.speak()
 =
@@ -623,41 +637,55 @@ sleep(1.5)
 i01_head_rothead.moveTo(90)
 ```
 
-i01_mouth.speakBlocking()
+i01.speakBlocking()
 =
-Another way to achieve speaking is with i01_mouth.speakBlocking(). 
+Another way to achieve speaking is with i01.speakBlocking(). 
 
-The same rule applies when using i01_mouth.speakBlocking(). Place spoken text between quotes within between the ( ). 
+The same rule applies when using i01.speakBlocking(). Place spoken text between quotes within between the ( ). 
+
 ```py 
-i01_mouth.speakBlocking("Now I am speak Blocking! Haha")
+i01.speakBlocking("Now I am speak Blocking! Haha")
 ```
 
-The major difference with i01_mouth.speakBlocking() is that it will "Block" all of the following lines in your script until it is done saying whatever is within the (). 
-- This means if you have a .moveTo() command following i01_mouth.speakBlocking(), it will not move until the speech is complete.
+The major difference with i01.speakBlocking() is that it will "Block" all of the following lines in your script until it is done saying whatever is within the (). 
+- This means if you have a .moveTo() command following i01.speakBlocking(), it will not move until the speech is complete.
 ```py 
 #In this example you can see rothead will only move to the 130 position AFTER i01_mouth.speakBlocking() is complete.
 i01_mouth.speakBlocking("Now I am speak Blocking! Haha")
 i01_head_rothead.moveTo(130)
 ```
 
-You will notice in the above example that there is no sleep() timer before the .moveTo(). i01_mouth.speakBlocking() is acting like a sleep timer in this situation. 
-- It is "blocking" all lines following until speech is complete before moving on.
+You will notice in the above example that there is no sleep() timer before the .moveTo(). 
+
+i01.speakBlocking() is acting like a sleep timer in this situation by "blocking" all lines following until speech is complete.
+- This acts as a "break" in the code which resembles a sleep() timer with the duration the length of the spoken text. 
 - Because of this, sleep() is not needed. Adding a sleep() would further extend the time before moveTo() begins.
 
-NOTE: Currently bugged
+Which should I use? speak() OR speakBlocking()? 
+= 
+It is personal preference honestly. Extra options are always nice. 
 
-- i01.speakBlocking() is NOT blocking correctly. (this maybe fixed later today for all I know.) 
+I know Gael has used i01.speakBlocking() in various gestures over the years. 
+- You can find some examples of his usage in various built-in gestures. (Info at bottom) 
 
-- i01_mouth.speakBlocking() - Is currently blocking correctly. 
+Benefits of i01.speak():
+- You can move various servos even while speech is occuring which is useful for more advanced gestures.
+- Your bot won't come to a stand still while waiting for the spoken text to finish.
+   - This means though you need to figure out sleep() timer lengths for when speech applies during which movements, etc. 
 
-NOTE: Future changes.
+Benefits of i01.speakBlocking():
+- You don't have to worry about adding a sleep() timer and figuring out time lengths. 
+- You know exactly when the following lines will start since it waits/blocks until speech is finished.
+- This option can make creating gestures easier/faster for you.
+    - but also limits what can be done during speech. 
 
-- i01.speakBlocking() - is what we will be using in the future.
+Generally I want various servos to be able to move even while the bot is still speaking to avoid any awkward pauses in a gesture. 
+- That is why I almost always use i01.speak().
+- There maybe some ideal use cases for i01.speakBlocking() which I can't think due to not using it often. *shrug*
+
+
+
   
-- i01_mouth.speakBlocking() - may stop working eventually.
-  
-- i01_mouth.speak() - This was not listed above, but also works for now and may not in the future.
-   - I don't believe you will need it as "i01.speak()" already seems to be working fine.
 
 
 ADDITIONAL FUNCTIONS WITHIN GESTURES
