@@ -645,17 +645,20 @@ You will notice in the above example that there is no sleep() timer before the .
 - Because of this, sleep() is not needed. Adding a sleep() would further extend the time before moveTo() begins.
 
 NOTE: Currently bugged
--i01.speakBlocking()  - Not blocking correctly. (Although... this maybe fixed later today for all I know.) 
--i01_mouth.speakBlocking() - Is currently blocking correctly. 
+
+- i01.speakBlocking() is NOT blocking correctly. (this maybe fixed later today for all I know.) 
+
+- i01_mouth.speakBlocking() - Is currently blocking correctly. 
 
 NOTE: Future changes.
+
 - i01.speakBlocking() - is what we will be using in the future.
-- i01_mouth.speakBlocking() - may stop working eventually. 
-- i01_mouth.speak() - This was not listed above, but also works for now and may not in the future. I don't believe you will need it as "i01.speak()" already seems to be working fine.
+  
+- i01_mouth.speakBlocking() - may stop working eventually.
+  
+- i01_mouth.speak() - This was not listed above, but also works for now and may not in the future.
+   - I don't believe you will need it as "i01.speak()" already seems to be working fine.
 
-
-
-=======================================================
 
 ADDITIONAL FUNCTIONS WITHIN GESTURES
 = 
