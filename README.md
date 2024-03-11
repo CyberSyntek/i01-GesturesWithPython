@@ -7,6 +7,31 @@ Welcome to the how-to control your InMoov servo services in MyRobotLab(MRL) usin
 This tutorial assumes that you have already have a basic understanding of using MRL and the InMoov services (i01).  
 - Know how to launch servo services from the InMoov (i01) UI, calibrate and move your servos with the sliders in the servo services.
 
+
+WHEN IN DOUBT, UPDATE!
+= 
+
+![MRLheader](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/8bece874-cb88-4e35-8e60-c36b92f1eaff)
+
+MyRobotLab (MRL)'s latest edition (Nixie) is still receiving constant updates, bug fixes, etc etc. 
+- Everytime something new is added, a bug is fixed, etc etc, an updated Ver of MRL releases.
+- If you notice anything in this tutorial not working, it likely means you are using an outdated copy.
+- Try and not fall too many versions behind. 
+
+Download latest version here:
+
+https://build.myrobotlab.org:8443/job/myrobotlab/job/develop/lastSuccessfulBuild/artifact/target/myrobotlab.zip
+
+You can transfer your saved services (calibrated servos, etc, etc) easily over to the updated version. 
+- Data for anything you have saved will be in the date folder. Example: "myrobotlab-1.1.1402\data\config". 
+- Tranfer that folder over to newest version's data folder. "Example: "myrobotlab-1.1.1411\data\config".
+ - Back in business. :)
+
+
+
+
+
+
 INMOOV SERVO SERVICES
 = 
 As you open up the default InMoov Servo services, you will see them displayed on the left side panel. 
@@ -719,21 +744,6 @@ ADDITIONAL FUNCTIONS WITHIN GESTURES
 - ???? 
 - ? 
 - ?
-
-=======================================================
-
-WHEN IN DOUBT, UPDATE!
-= 
-
-Using the latest version of MRL is the best way to avoid running into issues / bugs!
-
-https://build.myrobotlab.org:8443/job/myrobotlab/job/develop/lastSuccessfulBuild/artifact/target/myrobotlab.zip
-
-MyRobotLab (MRL)'s latest edition (Nixie) is still receiving constant updates, bug fixes, etc etc. 
-- Everytime something new is added, a bug is fixed, etc etc, an updated Ver of MRL releases.
-- If you notice anything in this tutorial not working, it likely means you are using an outdated copy.
-- Try and not fall too many versions behind. 
-
 
 =======================================================
 
