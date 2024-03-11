@@ -576,12 +576,13 @@ i01.head.eyelidLeft & i01.head.eyelidRight
 SUB SERVO GROUPS
 = 
 
+I NEED TO UPDATED THIS SECTION STILL.
+
 If you have ever explored the built-in gestures folder, you may come across some examples of group lines looking like the following example.
 - There is more info relating to built-in gestures at the bottom of this page.
 
 Gael has created a few "sub" groups over the years.....which.... you will learn about when I update this. :D
 
-*beep boop* Updates in progress! 
 
 
 SPEECH WITHIN GESTURES
@@ -685,14 +686,6 @@ Generally I want various servos to be able to move even while the bot is still s
 
 
 
-  
-
-
-ADDITIONAL FUNCTIONS WITHIN GESTURES
-= 
-
-*beep boop* Updates in progress! 
-
 =======================================================
 
 DEFINING YOUR GESTURES (FORMAT AND SAVING)
@@ -709,10 +702,38 @@ IMPORTING YOUR GESTURES
 
 =======================================================
 
-ASSIGNING VOICE COMMANDS TO YOUR GESTURES?
+ASSIGNING VOICE COMMANDS TO GESTURES
 = 
 
 *beep boop* Updates in progress!
+
+=======================================================
+
+
+ADDITIONAL FUNCTIONS WITHIN GESTURES
+= 
+
+*beep boop* Updates in progress! 
+
+- AudioFile?
+- ???? 
+- ? 
+- ?
+
+=======================================================
+
+WHEN IN DOUBT, UPDATE!
+= 
+
+Using the latest version of MRL is the best way to avoid running into issues / bugs!
+
+https://build.myrobotlab.org:8443/job/myrobotlab/job/develop/lastSuccessfulBuild/artifact/target/myrobotlab.zip
+
+MyRobotLab (MRL)'s latest edition (Nixie) is still receiving constant updates, bug fixes, etc etc. 
+- Everytime something new is added, a bug is fixed, etc etc, an updated Ver of MRL releases.
+- If you notice anything in this tutorial not working, it likely means you are using an outdated copy.
+- Try and not fall too many versions behind. 
+
 
 =======================================================
 
