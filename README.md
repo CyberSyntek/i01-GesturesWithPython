@@ -337,27 +337,28 @@ Moving multiple servos to various positions
 =
 As mentioned earlier, you can move as many different servos as wanting at the same time. Now we will move 5 servos together.
 - All servos to 180 > sleep for 5s > all servos to 0 > sleep for 5s > all servos to 90 > sleep for 0.1s.
+- 
+![MultiServoMadness](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/cca4ad29-8d52-4245-91c0-8adaeda63483)
 
-![Multiservosleep](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/3e8d807a-7550-4e64-aeb5-0aacd002cd12)
 
 ```py
 i01_head_neck.moveTo(180)
 i01_head_rothead.moveTo(180)
-i01_head_rollneck.moveTo(180)
+i01_head_rollNeck.moveTo(180)
 i01_leftArm_bicep.moveTo(180)
 i01_rightArm_bicep.moveTo(180)
 sleep(5)
 
 i01_head_neck.moveTo(0)
 i01_head_rothead.moveTo(0)
-i01_head_rollneck.moveTo(0)
+i01_head_rollNeck.moveTo(0)
 i01_leftArm_bicep.moveTo(0)
 i01_rightArm_bicep.moveTo(0)
 sleep(5)
 
 i01_head_neck.moveTo(90)
 i01_head_rothead.moveTo(90)
-i01_head_rollneck.moveTo(90)
+i01_head_rollNeck.moveTo(90)
 i01_leftArm_bicep.moveTo(90)
 i01_rightArm_bicep.moveTo(90)
 sleep(0.1)
@@ -368,15 +369,16 @@ Applying various limits and positions to multiple servos in different stages.
 
 In this example, you can see how to apply speed limits + move multiple servos > sleep > repeat to your hearts content or until you go crazy. :D
 
-![VariousStageChanges](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/8a2417fa-255a-46c9-9c31-de03084068fd)
+![MultiStages](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/30aba3b4-61b3-47d6-bb1d-b7bad69675a9)
+
 
 ```py
 i01_head_neck.setSpeed(150)
 i01_head_rothead.setSpeed(200)
-i01_head_rollneck.setSpeed(50)
+i01_head_rollNeck.setSpeed(50)
 i01_head_neck.moveTo(180)
 i01_head_rothead.moveTo(180)
-i01_head_rollneck.moveTo(180)
+i01_head_rollNeck.moveTo(180)
 sleep(7)
 
 i01_head_neck.setSpeed(100)
@@ -384,15 +386,15 @@ i01_head_rothead.setSpeed(None)
 i01_head_rollneck.setMaxSpeed()
 i01_head_neck.moveTo(0)
 i01_head_rothead.moveTo(0)
-i01_head_rollneck.moveTo(0)
+i01_head_rollNeck.moveTo(0)
 sleep(3)
 
 i01_head_neck.setSpeed(200)
 i01_head_rothead.setSpeed(200)
-i01_head_rollneck.setSpeed(200)
+i01_head_rollNeck.setSpeed(200)
 i01_head_neck.moveTo(90)
 i01_head_rothead.moveTo(90)
-i01_head_rollneck.moveTo(90)
+i01_head_rollNeck.moveTo(90)
 ```
 
 Not enough sleep!
@@ -601,13 +603,32 @@ i01.head.eyelidLeft & i01.head.eyelidRight
 SUB SERVO GROUPS
 = 
 
-I NEED TO UPDATED THIS SECTION STILL.
+There are a few V1 head servo sub-groups which were made over the years. You can use them as well if so desiring to do so.
 
-If you have ever explored the built-in gestures folder, you may come across some examples of group lines looking like the following example.
-- There is more info relating to built-in gestures at the bottom of this page.
+If you ever explore the built-in gestures folder, you may come across some examples of lines looking like the following example.
+- (There is more info relating to built-in gestures at the bottom of this page.)
 
-Gael has created a few "sub" groups over the years.....which.... you will learn about when I update this. :D
+![SubGroups](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/000d739a-7b5f-467b-9dbe-87131091fe8b)
 
+
+You can see in the below example which values represent which servo. 
+- They are very similar to the Servo Groups mentioned above.
+  
+  - Exceptions being"i01.moveHead(100,100,100,100)" as this doesn't exist at all and will cause a traceback error.
+![TracebackArg4](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/683264aa-84c2-4f7e-afa2-0bc7732b736f)
+  - and "i01.moveHead(100,100,100)" as the 3rd value is "rollNeck". This is the only exception in which the 3rd value servo changes. 
+
+```py
+i01.moveHead(100,100) #(neck,rothead)
+i01.moveHead(100,100,100) #(neck,rothead,rollNeck)
+#i01.moveHead(100,100,100,100) DOESN'T EXIST / WILL CAUSE TRACEBACK ERROR
+i01.moveHead(100,100,100,100,100) #(neck,rothead,eyeX,eyeY,jaw)
+i01.moveHead(100,100,100,100,100,100) #(neck,rothead,eyeX,eyeY,jaw,rollNeck) Full group. 
+```
+
+I don't personally ever use these, but they exist as an option. 
+- Atleast you will understand what role "i01.moveHead(100,100)" plays now if you see it in the gestures folder.
+- I believe "01.setHeadSpeed(100,100)" for example will also work for these sub groups. 
 
 
 SPEECH WITHIN GESTURES
