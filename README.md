@@ -337,7 +337,7 @@ Moving multiple servos to various positions
 =
 As mentioned earlier, you can move as many different servos as wanting at the same time. Now we will move 5 servos together.
 - All servos to 180 > sleep for 5s > all servos to 0 > sleep for 5s > all servos to 90 > sleep for 0.1s.
-- 
+
 ![MultiServoMadness](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/cca4ad29-8d52-4245-91c0-8adaeda63483)
 
 
@@ -396,6 +396,26 @@ i01_head_neck.moveTo(90)
 i01_head_rothead.moveTo(90)
 i01_head_rollNeck.moveTo(90)
 ```
+
+WARNING: Not all movements are 100% safe!
+= 
+It will be important when you first start playing with gestures to take it slow!
+
+Even with a well calibrated robot, accidents can happen. Your servo calibration protests that servo and that part from breaking itself.
+- It does NOT protest other servos from breaking that part.
+
+Examples of try to avoid movements
+- Index and Thumb: When closing at the same time and speed, it is possible for them to bump.
+  -It is best to either adjust the speed limits or sleep timers so they will avoid each other.
+  
+- If the shoulders rotate servo is rotated inwards, bicep raised and shoulder moved back, the arm can hit the stomach.
+  - This one can be avoided if the omoplate is also raised.
+  - However: Omoplate must have power to the servo or gravity cause it to come crashing down. (Auto-Disable timers: See below)
+
+- Certain movements with the arms are able to hit the head of the robot. 
+
+Get comfortable with smaller ranges of movement while moving various servos before pushing them to their limits!
+
 
 Not enough sleep!
 = 
