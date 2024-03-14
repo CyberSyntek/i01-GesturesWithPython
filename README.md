@@ -833,6 +833,11 @@ It will now format it to look like this for you and you are good to go. Safe ges
 
 Note: VScode also auto-converts tabs for you. :9 
 
+CREATING A CUSTOM FOLDER FOR YOUR SCRIPTS AND OTHER USED IN MRL FILES.
+= 
+
+*beep boop* Updates in progress!
+
 IMPORTING YOUR GESTURES
 =
 
