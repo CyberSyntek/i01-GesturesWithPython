@@ -864,7 +864,25 @@ Note: VScode also auto-converts tabs for you. :9
 CREATING A CUSTOM FOLDER FOR YOUR MRL CONTENT
 = 
 
-*beep boop* Updates in progress!
+Example: Here you can see I have a MRL folder created for the various versions of MRL for when updating. 
+
+- I have created a "Custom" folder within that folder to put my various files in when I use MRL regardless of version.
+  - It can be named anything you want, the pathway to the folder files are what we are concerned with.
+- The important thing is that this folder is not within any specific version of MRL.
+  - With its own location, it can be applied with updates easily.
+  - Avoid using complex names or symbols is suggested as things could get strange/errors. 
+
+Note: "BasicMovement" I made for small basic "gestures" moving both eyes left for example. 
+   - The "Gestures" folder is where I generally put things that are more complex than one or two movements. 
+   - Completely upto you how you set things up and or what you keep in the folder. :) 
+
+![CustomFolder](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/f4cbe285-df43-4059-af0b-90167f20863c)
+
+For now I have moved the "examplescripttests.py" file from earlier into the root of my Custom folder.
+
+![ExampleScript](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/849a2170-07af-4cc4-9340-42c8e5b22273)
+
+
 
 IMPORTING YOUR GESTURES
 =
