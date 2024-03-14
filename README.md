@@ -736,8 +736,72 @@ Generally I want various servos to be able to move even while the bot is still s
 
 DEFINING YOUR GESTURES (FORMAT AND SAVING)
 =
+When defining your gestures, you will need to change the format from what we have used so far. 
 
-*beep boop* Updates in progress!
+- The number of initial spaces doesn't matter, but must remaining consistent for all lines. 
+- There are exceptions to this in more complex examples which we are not worried about at this point.
+
+![Defining01](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/838c0355-c3a1-40e6-84a9-eb5e0753b546)
+
+```py
+def examplescripttest1():
+    i01_head_rothead.moveTo(130)
+    sleep(4)
+    i01_head_rothead.moveTo(50)
+    sleep(4)
+    i01_head_rothead.moveTo(90)
+#### <--- 4 spaces.
+
+def examplescripttest2():
+  i01_head_rothead.moveTo(130)
+  sleep(4)
+  i01_head_rothead.moveTo(50)
+  sleep(4)
+  i01_head_rothead.moveTo(90)
+## <--- 2 spaces.
+
+def examplescripttest3():
+    i01_head_rothead.moveTo(130)
+    sleep(4)
+    i01_head_rothead.moveTo(50)
+    sleep(4)
+    i01_head_rothead.moveTo(90)
+#### <--- 4 spaces with tabs. = Bad practice, but MRL saves us... this time. 
+```
+
+One your script looks ready, you will need to hit execute for it to be able to run them. 
+- Note: This will not run the individual scripts, but rather make them able to be ran as seen in the next step.
+
+![Defining02-1](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/270f0b04-544b-440d-bbfd-edc9e10d6da9)
+
+
+Here I have opened up another tab to be able to test the scripts from above. 
+- You can see the format for how we will test them once they have been executed. (As seen above)
+- In this example, I have hastagged out the other two examples so I can test one at a time. (Adding and removing #)
+- Hit execute to run the script. (This time, it will move the servos or whatever is in the defined script.) 
+
+![Defining03-1](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/9b4ca483-721d-4ff6-8f57-dcdcbbf204f4)
+
+```py
+examplescripttest1()
+#examplescripttest2()
+#examplescripttest3()
+```
+
+Here I have opened another new tab and have given it the name "exampletestscripts". 
+- When hitting the save button, this is the name that it will output the .py file as. 
+
+![Defining04-1](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/5bf92937-faf7-44b0-a1c0-37b82ed14779)
+
+When the file is saved, it can be found in your MRL(ver) root folder.
+- You can change the name to whatever you want after you save it too of course. 
+
+Warning: If you save a file with the same name as a file still in your root directory, it will be overwritten!
+- Using different names is always a good idea for safety. This is why I suggest naming your tab to whatever you want to call the file.
+- Also not keeping the files in your root directory is a good idea as well which we will get into next!
+
+![Defining05-1](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/19b09e18-9071-402a-8d9b-ae990104b902)
+
 
 =======================================================
 
