@@ -798,11 +798,12 @@ Here I have opened another new tab and have given it the name "exampletestscript
 
 When the file is saved, it can be found in your MRL(ver) root folder.
 
-
 ![Defining05-1](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/19b09e18-9071-402a-8d9b-ae990104b902)
 
 - You can change the name to whatever you want after you save it too of course. 
 
+WARNING: RISK OF GESTURE LOSS!
+=
 ![Warning](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/e58f0e57-ab5a-4558-af0e-3bcd14b5d3a9)
 
 
@@ -840,7 +841,7 @@ It will now format it to look like this for you and you are good to go. Safe ges
 
 Note: VScode also auto-converts tabs for you. :9 
 
-CREATING A CUSTOM FOLDER FOR YOUR SCRIPTS AND OTHER USED IN MRL FILES.
+CREATING A CUSTOM FOLDER FOR YOUR MRL CONTENT
 = 
 
 *beep boop* Updates in progress!
