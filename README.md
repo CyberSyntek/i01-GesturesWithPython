@@ -401,8 +401,8 @@ WARNING: Not all movements are 100% safe!
 = 
 It will be important when you first start playing with gestures to take it slow!
 
-Even with a well calibrated robot, accidents can happen. Your servo calibration protests that servo and that part from breaking itself.
-- It does NOT protest other servos from breaking that part.
+Even with a well calibrated robot, accidents can happen. Your servo calibration protects that servo and that part from breaking itself.
+- It does NOT protect other servos from breaking that part.
 
 Examples of try to avoid movements
 - Index and Thumb: When closing at the same time and speed, it is possible for them to bump.
