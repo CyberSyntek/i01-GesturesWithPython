@@ -888,28 +888,52 @@ Note: "BasicMovement" I made for small basic "gestures" moving both eyes left fo
 IMPORTING YOUR GESTURES
 =
 
+All the data from any config you have saved will be located in the Data\Config folder. 
+- Start up whatever i01 services you want > runtime > save config > "whichever name."
+- When loading the config name you saved it with should be listed as well. 
+
+For example: I have named my config i01Syntek as I am running my bot "Syntek" with the i01 InMoov services. 
+- This is why you can see a i01Syntek folder. :)
+
 ![Data1](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/0254100b-92d5-4444-a5c2-6879b2994795)
 
-
+Inside your service folder, you will want to locate the "python.yml" file and open it up. 
+- notepad /note++/whatever text editor you want.
+  
 ![Data2](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/a5ed4bb6-7d0f-4a31-a48f-6dc4a1fe44f1)
 
 
+You will be looking at startScripts:  
+- There should be brackets [ ] by default.
 
 ![Data3](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/a4ba69c9-c794-44ed-beb1-bce5ea09cbe0)
 
 
+Starting on the line following "startScripts:" you will want to list all your python scripts you want included and loaded at startup.
+- inclue a - followed by the file location. Example below.
+
+```py
+- C:\MRL\Custom\examplescripttests.py
+- C:\MRL\Custom\randomnametestscript.py
+```
+One you have entered whichever scripts you want included, save the file and then boot MRL. 
 
 ![Data4](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/da3f8f68-f2a0-46ae-a7bd-5d68f0aa5651)
 
 
+Boot your config (runtime > start "saved config name") and click over to python. 
+- You will see that the scripts do not autoload instantly and appear not to be there. 
+- Click "load and apply configuration"
 
 ![Data5](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/9b42473f-6b8b-48d5-9c63-03fdcd6d9b97)
 
 
+Now you can see the scripts are all loaded in. You do NOT need to execute them, they are loaded in as such. 
 
 ![Data6](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/4c75c509-f4da-4ffc-a5cd-2bf31f14afb5)
 
 
+Now you can see I opened up a new "test" tab to try and run one of the example scripts, hit execute and magic. It works. 
 
 ![Data7](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/f361a3ca-17ed-4fc4-9ed7-4e1f2584cf39)
 
@@ -920,10 +944,8 @@ If you DON'T load your scripts into MRL after you boot up your config, and then 
 - They WILL vanish from the python.yml startScripts: list! 
   - Without them loading in, the config will assume startScripts is empty and overwrite that file. 
   - You will need to enter them into the list again if that happens.
-  - 
+    
 ![Data8](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/4a42236d-ae1e-4b88-b1ea-fd01f1edb8e8)
-
-
 
 
 It can be useful to make a text backup of the python.yml file to be able to copy and paste back in the script list - just incase. 
