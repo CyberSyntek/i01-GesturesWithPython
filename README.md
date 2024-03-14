@@ -406,7 +406,7 @@ Even with a well calibrated robot, accidents can happen. Your servo calibration 
 
 Examples of try to avoid movements
 - Index and Thumb: When closing at the same time and speed, it is possible for them to bump.
-  -It is best to either adjust the speed limits or sleep timers so they will avoid each other.
+   - It is best to either adjust the speed limits or sleep timers so they will avoid each other.
   
 - If the shoulders rotate servo is rotated inwards, bicep raised and shoulder moved back, the arm can hit the stomach.
   - This one can be avoided if the omoplate is also raised.
