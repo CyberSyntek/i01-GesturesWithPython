@@ -802,6 +802,36 @@ Warning: If you save a file with the same name as a file still in your root dire
 
 ![Defining05-1](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/19b09e18-9071-402a-8d9b-ae990104b902)
 
+WHY YOU SHOULDN'T WRITE YOUR SCRIPTS IN MRL
+= 
+
+![Warning](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/e58f0e57-ab5a-4558-af0e-3bcd14b5d3a9)
+
+REASONS:
+- When you close MRL, whatever you have written in the python service will vanish. If you haven't saved it, it is lost.
+
+OTHER SOFTWARE:
+- I will be using VScode in these examples as it is free to download and useful for us in this situation. 
+- You can download VScode here:  https://code.visualstudio.com/ 
+
+REASONS:
+- When closing VScode, your code will remain! You would need to close the specific tab for that code to get rid of it.
+- This is very important for not losing your hard work on your gestures. Accidents happen or you forget to save things.
+
+   - You can do the same type of thing using Notepad++ as well, but VScode will be used for this example.
+ 
+![VScode3-1](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/aa3db55a-7a2f-4287-ab8f-16dbf1a5ff5d)
+
+When you first open up VScode and hit "File > New", it will appear like this. 
+- Click "Select a language" and select "Python".
+
+![VScode1](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/503f9207-b1dd-4f0a-8b9a-625308679ce2)
+
+It will now format it to look like this for you and you are good to go. Safe gesture storage = win! 
+
+![VScode2](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/48f8187a-ef39-4df7-b9d9-28261ac1862e)
+
+Note: VScode also auto-converts tabs for you. :9 
 
 =======================================================
 
