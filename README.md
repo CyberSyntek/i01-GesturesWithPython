@@ -769,11 +769,14 @@ def examplescripttest3():
 #### <--- 4 spaces with tabs. = Bad practice, but MRL saves us... this time. 
 ```
 
-One your script looks ready, you will need to hit execute for it to be able to run them. 
-- Note: This will not run the individual scripts, but rather make them able to be ran as seen in the next step.
+NOTE: You may have noticed that I have 3 different things defined here.
+- You can have as many different things defined in one script as you want!
+- Obviously it can be hard to find them all again easily if you add hundreds of them into the same file, but ... its possible. 
+
+Once your script looks ready, you will need to hit execute for it to be able to run them. 
+- Note: This will not "run" the individual scripts, but rather make them able to be ran as seen in the next step.
 
 ![Defining02-1](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/270f0b04-544b-440d-bbfd-edc9e10d6da9)
-
 
 Here I have opened up another tab to be able to test the scripts from above. 
 - You can see the format for how we will test them once they have been executed. (As seen above)
