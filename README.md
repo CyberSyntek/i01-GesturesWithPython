@@ -888,7 +888,49 @@ Note: "BasicMovement" I made for small basic "gestures" moving both eyes left fo
 IMPORTING YOUR GESTURES
 =
 
-*beep boop* Updates in progress!
+![Data1](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/0254100b-92d5-4444-a5c2-6879b2994795)
+
+
+![Data2](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/a5ed4bb6-7d0f-4a31-a48f-6dc4a1fe44f1)
+
+
+
+![Data3](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/a4ba69c9-c794-44ed-beb1-bce5ea09cbe0)
+
+
+
+![Data4](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/da3f8f68-f2a0-46ae-a7bd-5d68f0aa5651)
+
+
+
+![Data5](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/9b42473f-6b8b-48d5-9c63-03fdcd6d9b97)
+
+
+
+![Data6](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/4c75c509-f4da-4ffc-a5cd-2bf31f14afb5)
+
+
+
+![Data7](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/f361a3ca-17ed-4fc4-9ed7-4e1f2584cf39)
+
+
+Avoiding Missing Scripts
+=
+If you DON'T load your scripts into MRL after you boot up your config, and then you happen to save your config from runtime:
+- They WILL vanish from the python.yml startScripts: list! 
+  - Without them loading in, the config will assume startScripts is empty and overwrite that file. 
+  - You will need to enter them into the list again if that happens.
+  - 
+![Data8](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/4a42236d-ae1e-4b88-b1ea-fd01f1edb8e8)
+
+
+
+
+It can be useful to make a text backup of the python.yml file to be able to copy and paste back in the script list - just incase. 
+ - This can save you needing to remember which scripts you have included, if for example you have a long list of scripts.
+
+![Data9](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/3dfc7063-51f7-4e7f-abb3-54779aeb3d66)
+
 
 =======================================================
 
