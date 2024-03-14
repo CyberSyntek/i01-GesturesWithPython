@@ -797,19 +797,23 @@ Here I have opened another new tab and have given it the name "exampletestscript
 ![Defining04-1](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/5bf92937-faf7-44b0-a1c0-37b82ed14779)
 
 When the file is saved, it can be found in your MRL(ver) root folder.
-- You can change the name to whatever you want after you save it too of course. 
 
-Warning: If you save a file with the same name as a file still in your root directory, it will be overwritten!
-- Using different names is always a good idea for safety. This is why I suggest naming your tab to whatever you want to call the file.
-- Also not keeping the files in your root directory is a good idea as well which we will get into next!
 
 ![Defining05-1](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/19b09e18-9071-402a-8d9b-ae990104b902)
 
-WHY YOU SHOULDN'T WRITE YOUR SCRIPTS IN MRL
-= 
+- You can change the name to whatever you want after you save it too of course. 
 
 ![Warning](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/e58f0e57-ab5a-4558-af0e-3bcd14b5d3a9)
 
+
+WARNING: SAVING FILES
+=
+If you save a file with the same name as a file still in your root directory, it will be overwritten!
+- Using different names is always a good idea for safety. This is why I suggest naming your tab to whatever you want to call the file.
+- Also not keeping the files in your root directory is a good idea as well which we will get into next!
+
+WHY YOU SHOULDN'T WRITE YOUR SCRIPTS IN MRL
+= 
 REASONS:
 - When you close MRL, whatever you have written in the python service will vanish. If you haven't saved it, it is lost.
 
