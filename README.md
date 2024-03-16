@@ -954,25 +954,118 @@ It can be useful to make a text backup of the python.yml file to be able to copy
 ![Data9](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/3dfc7063-51f7-4e7f-abb3-54779aeb3d66)
 
 
-=======================================================
 
-ASSIGNING VOICE COMMANDS TO GESTURES
+CREATING A CUSTOM CHATBOT FOR VOICE COMMANDS
 = 
 
-*beep boop* Updates in progress!
+THIS WILL MAKE UPDATING TO NEW VERSIONS OF MRL MUCH EASIER. 
+- The new chatbot will be tied to your ```data\config``` folder and not the current MRL version you are running.
+- This way when you update to new versions, all you need to worry about is bringing your ```config``` folder over.
+
+=======================================================
+
+Find the chatbot you will want to clone in the ```MRL(version#)\resource\ProgramAB``` folder. Copy it!
+- There are a number of different bots already there. Most of them are for different language support.
+ - Choose the language you will be using.
+
+In this case, I am using English and I copied ```en-US```. 
+
+![Chatbots](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/b7a6cbe1-1ea2-4889-a43b-185fb875efc0)
+
+
+Going back to the ```Custom``` folder I made earlier, I have also made a new folder in it called ```Chatbot```. 
+- You can call things whatever you want. The file pathway is what we care about.
+
+![CustomFolder1](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/3d2338d4-a79d-43e1-a33d-c48d3ad787fb)
+
+
+Paste the copied ```en-US``` folder into your ```Chatbot``` folder and rename it! Renaming the folder is IMPORTANT!
+- I renamed mine ```Syntek``` as that is my robots name, name it whatever you would like. :)
+
+After it is copy/pasted and renamed, we will ignore the folder for a few steps.
+
+![CustomFolder2](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/612ad804-ce7e-4c78-9ab5-41f937224e2b)
+
+Now we will head back to your config folder ```MRL(ver)\data\config\``` and locate the ```i01.chatBot.yml```. 
+
+![ServiceChatbot01](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/f17b0c33-dfde-4c7b-92ec-b115ee0eea5e)
+
+When you open up ```i01.chatBot.yml``` initially, it should look like this by default. 
+- You can keep all the bots on the list or remove them as wanted.
+
+Note: I had already changed mine, so I found a default ```i01.chatBot.yml``` in another backup config. 
+
+![ymldefaults](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/4dc03903-7d19-4b66-87c6-281a5663fd48)
+
+Change the ```botDir:``` to ```null``` and add the new location of your chatbot into the ```bot:``` list and save.
+
+![yml02-Changes](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/bd3b69dc-653c-420a-9ea5-03826571bea3)
+
+=======================================
+
+*UPDATING* 
+NOW...... OPEN UP MRL, load your config and head to the i01chatbot??? tab. 
+- Change chatbot to ```Syntek``` or whatever you have named it. 
+*Insert pic here*
+
+- Don't forget to load and apply settings from python to avoid headache of python.yml list poofing. This needs to be a habit before any save. 
+- Save config from runtime. (This will keep your new chatbot as the default when loading your config now). 
+
+*Insert pic here*????
+ 
+I NEED PICS OF THIS AND WILL FINISH UPDATING IN A FEW HOURS WHEN I GET BACK HOME! :9 
+
+=======================================
+
+ADDING VOICE COMMANDS TO GESTURES
+= 
+Now we will return to our chatbot folder. ```MRL\Custom\Chatbot\Syntek\```
+
+Within that folder we will be using a file named ```_inmoovGestures.aiml``` located within the ```aiml``` folder.     
+  - Example location: ```MRL\Custom\Chatbot\Syntek\aiml\_inmoovGestures.aiml```
+
+![CustomFolder3](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/f00025a0-dce7-417f-aa49-4d5637a2b271)
+
+Here we can see an example of the format in which voice commands within ```_inmoovGestures.aiml``` will work. 
+- ```CLOSE HANDS``` - will be the voice command said to the robot.
+- ```Closing my hands.``` - Will be how the robot responds. (This is optional, you can leave it blank if you don't want a response.)
+- ```handsclose()``` - is the defined gesture name. 
+
+NOTE: What you say MUST match the command exactly. If in this example you said "Closed Hands", or "Close Hand" it will not work.
+   - Unless of course you have made another command with that differently phrased voice command, or one already exists.
+
+![AIML1](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/56f00773-f408-47c7-a6da-116543960cae)
+
+Now we will add a new voice command of our own. I have placed this towards the bottom of the ```_inmoovGestures.aiml```.
+- The new voice command must be located above the ```</aiml>``` at the bottom to work or not cause an error.
+
+![AIML2](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/d57918db-ac97-4f38-be2e-cad04aac31ca)
+
+You can use this as an outline if wanting and add it to your ```_inmoovGestures.aiml```.
+
+```py
+<category><pattern>TEST YOUR NECK FOR ME</pattern>
+<template>Testing my neck.
+        <oob><mrl><service>python</service><method>exec</method><param>examplescripttest1()</param></mrl></oob></template>
+</category>
+```
+
+Don't forget to ```load and apply configuration``` to load your scripts prior to trying voice commands!
+- They will not work if you haven't loaded your scripts yet!
+- See IMPORTING YOUR GESTURES - ```load and apply configuration```. 
 
 =======================================================
 
 
-ADDITIONAL FUNCTIONS WITHIN GESTURES
+ADDITIONAL FUNCTIONS WITHIN GESTURES + NEED TO UPDATE LIST
 = 
 
-*beep boop* Updates in progress! 
+THINGS TO UPDATE 
+- audioPeak for Jaw control + settings explained.
+- audioFile? (Jaw responses to audio)
+- audioPlayer? (Jaw does NOT respond to audio)
+- Examples of Examples! Exploring the many other script examples available.
 
-- AudioFile?
-- ???? 
-- ? 
-- ?
 
 =======================================================
 
