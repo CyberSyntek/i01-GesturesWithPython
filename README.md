@@ -993,13 +993,19 @@ Now we will head back to your config folder ```MRL(ver)\data\config\``` and loca
 When you open up ```i01.chatBot.yml``` initially, it should look like this by default. 
 - You can keep all the bots on the list or remove them as wanted.
 
-Note: I had already changed mine, so I found a default ```i01.chatBot.yml``` in another backup config. 
+Note: I had already changed mine, so I made a default ```i01.chatBot.yml``` in another config. 
 
-![ymldefaults](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/4dc03903-7d19-4b66-87c6-281a5663fd48)
+![ChatbotDefaults](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/90d06cc3-6acc-4960-8637-3df8e757edf8)
 
-Change the ```botDir:``` to ```null``` and add the new location of your chatbot into the ```bot:``` list and save.
+ERROR WARNING:  If you are migrating your config folder over from a previous version of MRL, you may have an outdated ```i01.chatBot.yml```.
 
-![yml02-Changes](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/bd3b69dc-653c-420a-9ea5-03826571bea3)
+You will need to remove ```botDir: resource/ProgramAB``` from ```Line 2```.   ![botDirDeath](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/2d3de592-83f1-41b6-9534-a082cf719b1b)
+
+- This line can cause errors and needs to be removed from older versions of ```i01.chatBot.yml```.
+
+Add the new location of your chatbot into the ```bot:``` list and save.
+
+![CustomChatbot](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/2ce2b1e6-a2ef-40f0-9904-32b105cee369)
 
 =======================================
 
