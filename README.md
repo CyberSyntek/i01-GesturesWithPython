@@ -1045,14 +1045,14 @@ Now we will add a new voice command of our own. I have placed this towards the b
 
 You can use this as an outline if wanting and add it to your ```_inmoovGestures.aiml```.
 
-```py
+```xml
 <category><pattern>TEST YOUR NECK FOR ME</pattern>
 <template>Testing my neck.
         <oob><mrl><service>python</service><method>exec</method><param>examplescripttest1()</param></mrl></oob></template>
 </category>
 ```
 
-Don't forget to ```load and apply configuration``` to load your scripts prior to trying voice commands!
+Don't forget to ```load and apply configuration``` from ```python``` to load your scripts prior to trying voice commands!
 - They will not work if you haven't loaded your scripts yet!
 - See IMPORTING YOUR GESTURES - ```load and apply configuration```. 
 
