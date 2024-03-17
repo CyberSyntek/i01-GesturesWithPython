@@ -1009,19 +1009,15 @@ Add the new location of your chatbot into the ```bot:``` list and save.
 
 =======================================
 
-*UPDATING* 
-NOW...... OPEN UP MRL, load your config and head to the i01chatbot??? tab. 
-- Change chatbot to ```Syntek``` or whatever you have named it. 
-*Insert pic here*
+Open MRL and start your config from runtime. Head over to the ```i01.chatBot``` tab and confirm your bots name is selected. 
+- It should already be selected by default if you only had one chatbot in your ```i01.chatBot.yml```.
+- It you have multiple chatbots, change it to whichever one you will be using when moving onto adding voice commands.
 
-- Don't forget to load and apply settings from python to avoid headache of python.yml list poofing. This needs to be a habit before any save. 
-- Save config from runtime. (This will keep your new chatbot as the default when loading your config now). 
+![SelectChatbot](https://github.com/CyberSyntek/i01-GesturesWithPython/assets/81597534/88a1cd37-c9e0-4277-b27d-5aa185b74f32)
 
-*Insert pic here*????
- 
-I NEED PICS OF THIS AND WILL FINISH UPDATING IN A FEW HOURS WHEN I GET BACK HOME! :9 
-
-=======================================
+IF you had multiple chatbots: 
+- Remember to first ```load and apply settings``` from ```python``` to avoid losing scripts included in ```python.yml``` prior to saving config.
+- Save config from ```runtime```. (This will keep your new chatbot as the default when loading your config now). 
 
 ADDING VOICE COMMANDS TO GESTURES
 = 
