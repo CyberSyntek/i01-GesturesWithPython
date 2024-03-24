@@ -1056,20 +1056,12 @@ Don't forget to ```load and apply configuration``` from ```python``` to load you
 - They will not work if you haven't loaded your scripts yet!
 - See IMPORTING YOUR GESTURES - ```load and apply configuration```. 
 
-=======================================================
+audioPeak for Jaw control + settings
+=
 
+This has been updated to the link below.
 
-ADDITIONAL FUNCTIONS WITHIN GESTURES + NEED TO UPDATE LIST
-= 
-
-THINGS TO UPDATE 
-- audioPeak for Jaw control + settings explained.
-- audioFile? (Jaw responses to audio)
-- audioPlayer? (Jaw does NOT respond to audio)
-- Examples of Examples! Exploring the many other script examples available.
-
-
-=======================================================
+https://github.com/CyberSyntek/i01InMoovIntro
 
 EXPLORING BUILT IN GESTURES
 =
@@ -1090,3 +1082,14 @@ Keep in mind when I say explore, I mean examine the code rather then run them.
 I'm planning on breaking that down a bit sometime near future and making a list to highlight the safe to run examples. 
 - Some of them are safe as is, but I suggest you get used to reading the code before you run them so you can tell for yourself. 
 - OR... wait for my list. :)
+
+
+NEED TO UPDATE STILL LIST
+= 
+
+THINGS TO UPDATE 
+- audioFile? (Jaw responses to audio)
+- audioPlayer? (Jaw does NOT respond to audio)
+- Examples of Examples! Exploring the many other script examples available.
+- print()  (Why it is a good idea to add this to your script!) 
+
